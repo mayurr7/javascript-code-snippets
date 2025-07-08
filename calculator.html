@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 >Num 1: <input id="one" type="number"></h1>
+    <h1 >Num 2: <input id="two" type="number"></h1>
+    <h2><span id="result">result</span></h2>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+
+</body>
+
+<script>
+    function calculate(oprator){
+        let one = Number(document.getElementById('one').value);
+        let two = Number(document.getElementById('two').value);
+        let result = document.getElementById('result');
+        var res;
+        
+        switch (oprator) {
+            case '+':
+                res = one + two;
+                break;
+
+            case '-':
+                res = one - two;  
+                break;
+            
+            case '*':
+                res = one * two;  
+
+                break;
+                
+            case '/':
+                res = one / two;  
+                break;    
+
+        
+            default:
+                break;
+
+        
+        }
+        result.innerText = res;
+    }
+</script>
+</html>

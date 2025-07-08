@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return handleSubmit()" action="formValidated.html">
+        <div>
+
+        <h1>Email: <input id="email" type="email"> </h1> 
+        <h1>Number: <input id="num" type="number"> </h1> 
+        <h1>Password: <input id="pass1" type="password"> </h1> 
+        <h1>confirm Pass: <input id="pass2" type="password"> </h1> 
+
+        </div>
+    
+        <div>
+            <button type="submit" >Submit</button>
+        </div>
+
+    </form>
+    
+</body>
+<script>
+           
+
+        function handleSubmit(){
+
+            const mail = document.getElementById('email').value;
+            const num = document.getElementById('num').value;
+            const pass1 = document.getElementById('pass1').value;
+            const pass2 = document.getElementById('pass2').value;
+
+
+           if(mail === "" || num === "" || pass1==="" || pass2 === ""){
+            alert("all fields are required");
+            console.log("vgv");
+            return false;
+            
+           }
+
+           if(num.length !== 10 ){
+            alert("Enter valid num")
+            return false;
+           }
+
+           if(pass1 !== pass2){
+            alert("Password must be matched")
+            return false
+           }
+
+        }
+</script>
+</html>
